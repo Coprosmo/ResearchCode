@@ -213,3 +213,21 @@ def graph_to_data(tree, distinct_features):
     return features, edges
 
 
+def make_data():
+    datapoints = []
+    for i in range(600):
+        if i % 10 == 0:
+            print(i)
+        label = str(i)
+        if i // 10 == 0:
+            label = '0' + label
+        if i // 100 == 0:
+            label = '0' + label
+        with open(f'../deephol-data/deepmath/deephol/proofs/human/train/prooflogs-00{label}-of-00600.pbtxt', 'r') as f:
+            for line in f:
+                theorems, tree = get_theorems(line)
+                size = min(len(tree), 11)
+                datapoints.append((tree.root.value, size))
+        break
+    return datapoints
+
