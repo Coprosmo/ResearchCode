@@ -228,6 +228,5 @@ def make_data():
                 theorems, tree = get_theorems(line)
                 size = min(len(tree), 11)
                 datapoints.append((tree.root.value, size))
-        break
     return datapoints
 
