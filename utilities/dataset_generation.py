@@ -141,16 +141,18 @@ def thm_to_tree(theorem):
     while i_sym < len(theorem):
         sym = theorem[i_sym]
         if sym == '(':
-            new_subtree = Tree(root=Node(theorem[i_sym + 1]), parent=current_tree)
+            new_subtree = Tree(root=Node(theorem[i_sym + 1]), parent=current_tree, thm_start_idx=(i_sym + 1))
             current_tree.add_subtree(new_subtree)
             current_tree = new_subtree
             # i_sym += 1
         elif sym == ')':
             current_tree.subtree_repr = bfs_visit(current_tree)
+            current_tree.root.subtree_str = theorem[current_tree.thm_start_idx : i_sym - 1]
+            print(current_tree.root.subtree_str)
             current_tree = current_tree.parents[0]
         else:
             distinct_features.add(sym)
-            current_tree.add_subtree(Tree(root=Node(theorem[i_sym]), parent=current_tree))
+            current_tree.add_subtree(Tree(root=Node(theorem[i_sym], subtree_repr=theorem[i_sym]), parent=current_tree))
 
         i_sym += 1
 

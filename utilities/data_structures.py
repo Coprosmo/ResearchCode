@@ -8,11 +8,13 @@ class Tree:
         parents - list of Tree objects
         subtrees - list of Tree objects
         subtree_repr - string representation of tree
+        thm_start_idx - position in theorem of the start of the tree
     """
 
-    def __init__(self, root, parent=None):
+    def __init__(self, root, parent=None, thm_start_idx=0):
         self.root = root
         self.parents = [parent] if parent else []
+        self.thm_start_idx = thm_start_idx
         self.subtrees = []
         self.subtree_repr = None
 
@@ -52,12 +54,14 @@ class Node:
         label - unique identifier for node
         index - unique position in tree
         value - node data, not necessarily unique
+        subtree_str - string representation of subtree, determined via dfs traversal
     """
 
-    def __init__(self, label, index=None, value=None):
+    def __init__(self, label, index=None, value=None, subtree_str=None):
         self.label = label
         self.index = index
         self.value = value
+        self.subtree_str = subtree_str
 
     def __str__(self):
         return f'({self.label}, index={self.index})'
