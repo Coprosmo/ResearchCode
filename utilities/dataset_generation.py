@@ -226,7 +226,9 @@ def make_data():
         with open(f'../deephol-data/deepmath/deephol/proofs/human/train/prooflogs-00{label}-of-00600.pbtxt', 'r') as f:
             for line in f:
                 theorems, tree = get_theorems(line)
-                size = min(len(tree), 11)
+#                 size = min(len(tree), 11)
+                size = int(len(tree) <= 5)
+#                 y = torch.tensor([int(i+1 == size) for i in range(11)]).float()
                 datapoints.append((tree.root.value, size))
     return datapoints
 
