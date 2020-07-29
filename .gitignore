@@ -2,3 +2,5 @@ processed
 raw
 top_level_proofs.dataset
 .ipynb_checkpoints/
+*.dataset
+runs
