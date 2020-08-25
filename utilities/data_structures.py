@@ -11,9 +11,10 @@ class Tree:
         thm_start_idx - position in theorem of the start of the tree
     """
 
-    def __init__(self, root, parent=None, thm_start_idx=0):
+    def __init__(self, root, parent=None, subtree_str=None, thm_start_idx=0):
         self.root = root
         self.parents = [parent] if parent else []
+        self.subtree_str = subtree_str
         self.thm_start_idx = thm_start_idx
         self.subtrees = []
         self.subtree_repr = None

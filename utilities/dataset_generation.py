@@ -4,9 +4,13 @@ from collections import deque
 import re
 import torch
 from torch_geometric.data import Data, InMemoryDataset, DataLoader
+from tqdm import tqdm
+import random
+
+random.seed(42)
 
 
-def bfs_visit(tree, store_index=False):
+def bfs_visit(tree, store_index=False, fix_subtrees=True):
     index = 0
     queue = deque()
     visit_order = []
@@ -19,6 +23,9 @@ def bfs_visit(tree, store_index=False):
     while queue:
         x = queue.popleft()
         visit_order.append(x.root)
+        
+        if fix_subtrees and x.subtree_str is None:
+            x.subtree_str = x.root.label
 
         for subtree in x.subtrees:
             queue.append(subtree)
@@ -134,58 +141,80 @@ def get_theorems(proof):
 def thm_to_tree(theorem):
     """Transform theorem from string form to tree form. Return tree and a list of the unique distinct values in tree."""
 
-    distinct_features = set()
+    distinct_features = set(x for x in theorem if x not in '()')
+#     print(theorem, distinct_features)
     tree = Tree(root='', parent=None)
     current_tree = tree
     i_sym = 0
     while i_sym < len(theorem):
         sym = theorem[i_sym]
+#         print(sym)
         if sym == '(':
             new_subtree = Tree(root=Node(theorem[i_sym + 1]), parent=current_tree, thm_start_idx=(i_sym + 1))
+#             distinct_features.add(theorem[i_sym + 1])
             current_tree.add_subtree(new_subtree)
             current_tree = new_subtree
-            # i_sym += 1
+            i_sym += 1
         elif sym == ')':
             current_tree.subtree_repr = bfs_visit(current_tree)
-            current_tree.root.subtree_str = theorem[current_tree.thm_start_idx : i_sym - 1]
-            print(current_tree.root.subtree_str)
+            current_tree.subtree_str = ' '.join(theorem[current_tree.thm_start_idx : i_sym])
+#             print(current_tree.subtree_str)
             current_tree = current_tree.parents[0]
         else:
-            distinct_features.add(sym)
-            current_tree.add_subtree(Tree(root=Node(theorem[i_sym], subtree_repr=theorem[i_sym]), parent=current_tree))
+#             distinct_features.add(sym)
+            current_tree.add_subtree(Tree(root=Node(theorem[i_sym]), parent=current_tree))
 
         i_sym += 1
 
     final_tree = tree.subtrees[0]
     final_tree.parents = None
 
-    bfs_visit(final_tree, store_index=True)
+    bfs_visit(final_tree, store_index=True, fix_subtrees=True)
     return final_tree, distinct_features
 
 
 def merge_subexpressions(tree):
+    """Merge all similar subtrees within a tree. 
+    
+    Similar subtrees are identified by a DFS traversal string. The process
+    is as follows: when a subtree T with parent p is found to be similar to 
+    a subtree T' with parent p', all of ps subtrees which are similar to T'
+    are set to T', and p is added to the list of parents of T'.
+    """
+    
     subexpressions = dict()
     stack = []
     stack.append(tree)
 
     while stack:
         t = stack.pop()
-        if t.subtree_repr in subexpressions:
+#         print('Root: ', end='')
+#         print(t.root)
+#         print('Leaf value: ', end='')
+#         print(tree.subtrees[0].subtrees[1].root)
+#         print(t.subtree_str)
+        if t.subtree_str in subexpressions:
+#             print('Made it.')
             parent = t.parents[0]
             for i, subtree in enumerate(parent.subtrees):
-                if subtree.subtree_repr == t.subtree_repr:
-                    parent.subtrees[i] = subexpressions[t.subtree_repr]
-                    if parent not in subexpressions[t.subtree_repr].parents:
-                        subexpressions[t.subtree_repr].parents.append(parent)
+                if subtree.subtree_str == t.subtree_str:
+                    parent.subtrees[i] = subexpressions[t.subtree_str]
+                    if parent not in subexpressions[t.subtree_str].parents:
+                        subexpressions[t.subtree_str].parents.append(parent)
         else:
-            for subtree in t.subtrees:
+            subexpressions[t.subtree_str] = t
+            for subtree in t.subtrees[::-1]:
                 stack.append(subtree)
+#         print('Leaf value at end: ', end='')
+#         print(tree.subtrees[0].subtrees[1].root)
     return tree
 
 
-def graph_to_data(tree, distinct_features):
+def graph_to_data(tree, normalized_features):
     edges = []
     features = []
+    #print(distinct_features)
+#     normalized_features = {k: random.random() for k in distinct_features}
 
     stack = []
     stack.append(tree)
@@ -205,7 +234,9 @@ def graph_to_data(tree, distinct_features):
             stack.append(subtree)
             edges.append([x.root.index, subtree.root.index])
 
-    features = torch.tensor([[distinct_features.index(x)] for x in features])
+#     features = torch.tensor([[distinct_features.index(x)] for x in features])
+    features = torch.tensor([normalized_features[x] for x in features])
+#     print(features)
 
     edges = torch.tensor(edges)
     edges = edges.permute(1, 0)
@@ -215,11 +246,12 @@ def graph_to_data(tree, distinct_features):
     return features, edges
 
 
-def make_data():
+def make_data(binary=False, only_top=True):
     datapoints = []
-    for i in range(600):
-        if i % 10 == 0:
-            print(i)
+#     for i in tqdm(range(5)):
+    for i in tqdm(range(150)):
+#         if i % 10 == 0:
+#             print(i)
         label = str(i)
         if i // 10 == 0:
             label = '0' + label
@@ -228,9 +260,31 @@ def make_data():
         with open(f'../deephol-data/deepmath/deephol/proofs/human/train/prooflogs-00{label}-of-00600.pbtxt', 'r') as f:
             for line in f:
                 theorems, tree = get_theorems(line)
-#                 size = min(len(tree), 11)
-                size = int(len(tree) <= 5)
-#                 y = torch.tensor([int(i+1 == size) for i in range(11)]).float()
-                datapoints.append((tree.root.value, size))
+                
+                if only_top:
+                    if binary:
+                        size = int(len(tree) <= 5)
+                    else:
+                        size = min(len(tree), 11) - 1
+                    datapoints.append((tree.root.value, size))
+                    
+                else:
+                    stack = [tree]
+                    while stack:
+                        t = stack.pop()
+                        if t.root.value is None:
+                            continue
+                        if 'hypo' in t.root.value:
+                            print('Hypothesis Error!!!!')
+                        for s in t.subtrees:
+                            stack.append(s)
+                        
+                        if binary:
+                            t_size = int(len(t) <= 5)
+                        else:
+                            t_size = min(len(t), 11) - 1
+                        datapoints.append((t.root.value, float(t_size)))
+#                         if len(datapoints) % 999 == 0:
+#                             print(len(datapoints))
     return datapoints
 
