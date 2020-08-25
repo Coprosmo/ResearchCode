@@ -184,72 +184,92 @@ def merge_subexpressions(tree):
     
     subexpressions = dict()
     stack = []
-    stack.append(tree)
+    stack.append((tree, None))
 
     while stack:
-        t = stack.pop()
-#         print('Root: ', end='')
-#         print(t.root)
-#         print('Leaf value: ', end='')
-#         print(tree.subtrees[0].subtrees[1].root)
-#         print(t.subtree_str)
+        t, child_index = stack.pop()
+
         if t.subtree_str in subexpressions:
-#             print('Made it.')
             parent = t.parents[0]
-            for i, subtree in enumerate(parent.subtrees):
-                if subtree.subtree_str == t.subtree_str:
-                    parent.subtrees[i] = subexpressions[t.subtree_str]
-                    if parent not in subexpressions[t.subtree_str].parents:
-                        subexpressions[t.subtree_str].parents.append(parent)
+            parent.subtrees[child_index] = subexpressions[t.subtree_str]
+            subexpressions[t.subtree_str].parents.append(parent)
+#             for i, subtree in enumerate(parent.subtrees):
+#                 if subtree.subtree_str == t.subtree_str:
+#                     parent.subtrees[i] = subexpressions[t.subtree_str]
+# #                     if parent not in subexpressions[t.subtree_str].parents:
+#                     subexpressions[t.subtree_str].parents.append(parent)
         else:
             subexpressions[t.subtree_str] = t
-            for subtree in t.subtrees[::-1]:
-                stack.append(subtree)
-#         print('Leaf value at end: ', end='')
-#         print(tree.subtrees[0].subtrees[1].root)
+            for idx, subtree in enumerate(t.subtrees[::-1]):
+                stack.append((subtree, 1-idx))
+
     return tree
 
 
-def graph_to_data(tree, normalized_features):
-    edges = []
-    features = []
-    #print(distinct_features)
-#     normalized_features = {k: random.random() for k in distinct_features}
+def graph_to_data(tree, normalized_features=None):
+    edges_up = []
+    edges_down = []
+    edge_features_up = []
+    edge_features_down = []
+    node_features = []
+
 
     stack = []
-    stack.append(tree)
+    stack.append((tree, 0))
     processed_subtrees = []
+    processed_subtrees_of_parent = [None, None]
+    
     while stack:
-        x = stack.pop()
-        features.append(x.root.label)
+        processed_subtrees_of_parent = [None, None]
+        x, child_index = stack.pop()
+        node_features.append(x.root.label)
 
         if x.parents:
+            if x.root.index == 15:
+                print(x.parents)
             for parent in x.parents:
-                edges.append([parent.root.index, x.root.index])
+#                 for p, c in edges_up:
+#                     if p == parent.root.index and c == x.root.index:
+#                         break
+#                 else:
+                edges_up.append([parent.root.index, x.root.index])
+                edge_features_up.append(child_index)
 
-        for subtree in x.subtrees[::-1]:
-            if subtree in processed_subtrees:
-                continue
+        for idx, subtree in enumerate(x.subtrees[::-1]):
+            edges_down.append([x.root.index, subtree.root.index])
+            edge_features_down.append(1-idx)
+            
+            if subtree not in processed_subtrees:
+                stack.append((subtree, 1-idx))
+                processed_subtrees.append(subtree)
 
-            stack.append(subtree)
-            edges.append([x.root.index, subtree.root.index])
-
+     
 #     features = torch.tensor([[distinct_features.index(x)] for x in features])
-    features = torch.tensor([normalized_features[x] for x in features])
+#     node_features = torch.tensor([normalized_features[x] for x in node_features])
 #     print(features)
 
-    edges = torch.tensor(edges)
-    edges = edges.permute(1, 0)
+
+    print(edges_up)
+    print(edges_down)
+    assert(len(edges_up) == len(edges_down))
+
+    edges_up = torch.tensor(edges_up)
+    edges_up = edges_up.permute(1, 0)
+    edges_down = torch.tensor(edges_down)
+    edges_down = edges_down.permute(1, 0)
+    
+    edge_features_up = torch.tensor(edge_features_up)
+    edge_features_down = torch.tensor(edge_features_down)
 
     # datum = Data(x=features, edge_index=edges)
 
-    return features, edges
+    return node_features, (edges_up, edges_down), (edge_features_up, edge_features_down)
 
 
 def make_data(binary=False, only_top=True):
     datapoints = []
-#     for i in tqdm(range(5)):
-    for i in tqdm(range(150)):
+    for i in tqdm(range(5)):
+#     for i in tqdm(range(150)):
 #         if i % 10 == 0:
 #             print(i)
         label = str(i)
