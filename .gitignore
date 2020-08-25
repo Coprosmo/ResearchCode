@@ -4,3 +4,6 @@ top_level_proofs.dataset
 .ipynb_checkpoints/
 *.dataset
 runs
+utilities/__pycache__/dataset_generation.cpython-37.pyc 
+utilities/__pycache__/data_structures.cpython-37.pyc 
+utilities/__pycache__/__init__.cpython-37.pyc
