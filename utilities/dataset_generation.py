@@ -15,6 +15,7 @@ def bfs_visit(tree, store_index=False, fix_subtrees=True):
     queue = deque()
     visit_order = []
     queue.append(tree)
+    visited = [tree]
 
     if store_index:
         tree.root.index = index
@@ -28,11 +29,13 @@ def bfs_visit(tree, store_index=False, fix_subtrees=True):
             x.subtree_str = x.root.label
 
         for subtree in x.subtrees:
-            queue.append(subtree)
+            if subtree not in visited:
+                queue.append(subtree)
+                visited.append(subtree)
 
-            if store_index:
-                subtree.root.index = index
-                index += 1
+                if store_index:
+                    subtree.root.index = index
+                    index += 1
 
     return tuple(visit_order)
 
@@ -148,20 +151,17 @@ def thm_to_tree(theorem):
     i_sym = 0
     while i_sym < len(theorem):
         sym = theorem[i_sym]
-#         print(sym)
+
         if sym == '(':
             new_subtree = Tree(root=Node(theorem[i_sym + 1]), parent=current_tree, thm_start_idx=(i_sym + 1))
-#             distinct_features.add(theorem[i_sym + 1])
             current_tree.add_subtree(new_subtree)
             current_tree = new_subtree
             i_sym += 1
         elif sym == ')':
             current_tree.subtree_repr = bfs_visit(current_tree)
             current_tree.subtree_str = ' '.join(theorem[current_tree.thm_start_idx : i_sym])
-#             print(current_tree.subtree_str)
             current_tree = current_tree.parents[0]
         else:
-#             distinct_features.add(sym)
             current_tree.add_subtree(Tree(root=Node(theorem[i_sym]), parent=current_tree))
 
         i_sym += 1
@@ -169,7 +169,7 @@ def thm_to_tree(theorem):
     final_tree = tree.subtrees[0]
     final_tree.parents = None
 
-    bfs_visit(final_tree, store_index=True, fix_subtrees=True)
+    bfs_visit(final_tree, store_index=False, fix_subtrees=True)
     return final_tree, distinct_features
 
 
@@ -193,16 +193,13 @@ def merge_subexpressions(tree):
             parent = t.parents[0]
             parent.subtrees[child_index] = subexpressions[t.subtree_str]
             subexpressions[t.subtree_str].parents.append(parent)
-#             for i, subtree in enumerate(parent.subtrees):
-#                 if subtree.subtree_str == t.subtree_str:
-#                     parent.subtrees[i] = subexpressions[t.subtree_str]
-# #                     if parent not in subexpressions[t.subtree_str].parents:
-#                     subexpressions[t.subtree_str].parents.append(parent)
+
         else:
             subexpressions[t.subtree_str] = t
             for idx, subtree in enumerate(t.subtrees[::-1]):
-                stack.append((subtree, 1-idx))
+                stack.append((subtree, (len(t.subtrees)-1)-idx))
 
+    bfs_visit(tree, store_index=True, fix_subtrees=False)
     return tree
 
 
@@ -213,46 +210,37 @@ def graph_to_data(tree, normalized_features=None):
     edge_features_down = []
     node_features = []
 
-
     stack = []
     stack.append((tree, 0))
     processed_subtrees = []
-    processed_subtrees_of_parent = [None, None]
     
     while stack:
-        processed_subtrees_of_parent = [None, None]
         x, child_index = stack.pop()
         node_features.append(x.root.label)
+        if child_index > 1:
+            print('Found node with > 1 children')
 
         if x.parents:
-            if x.root.index == 15:
-                print(x.parents)
             for parent in x.parents:
 #                 for p, c in edges_up:
 #                     if p == parent.root.index and c == x.root.index:
 #                         break
 #                 else:
-                edges_up.append([parent.root.index, x.root.index])
-                edge_features_up.append(child_index)
+                edges_up.append([x.root.index, parent.root.index])
+                edge_features_up.append([child_index])
 
         for idx, subtree in enumerate(x.subtrees[::-1]):
             edges_down.append([x.root.index, subtree.root.index])
-            edge_features_down.append(1-idx)
+            edge_features_down.append([(len(x.subtrees) - 1) - idx])
             
             if subtree not in processed_subtrees:
-                stack.append((subtree, 1-idx))
+                stack.append((subtree, (len(x.subtrees) - 1) - idx))
                 processed_subtrees.append(subtree)
 
      
-#     features = torch.tensor([[distinct_features.index(x)] for x in features])
-#     node_features = torch.tensor([normalized_features[x] for x in node_features])
-#     print(features)
-
-
-    print(edges_up)
-    print(edges_down)
-    assert(len(edges_up) == len(edges_down))
-
+    if normalized_features is not None:
+        node_features = torch.tensor([normalized_features[x] for x in node_features])
+    
     edges_up = torch.tensor(edges_up)
     edges_up = edges_up.permute(1, 0)
     edges_down = torch.tensor(edges_down)
@@ -261,17 +249,13 @@ def graph_to_data(tree, normalized_features=None):
     edge_features_up = torch.tensor(edge_features_up)
     edge_features_down = torch.tensor(edge_features_down)
 
-    # datum = Data(x=features, edge_index=edges)
-
     return node_features, (edges_up, edges_down), (edge_features_up, edge_features_down)
 
 
 def make_data(binary=False, only_top=True):
     datapoints = []
-    for i in tqdm(range(5)):
-#     for i in tqdm(range(150)):
-#         if i % 10 == 0:
-#             print(i)
+#     for i in tqdm(range(10)):
+    for i in tqdm(range(150)):
         label = str(i)
         if i // 10 == 0:
             label = '0' + label
@@ -304,7 +288,6 @@ def make_data(binary=False, only_top=True):
                         else:
                             t_size = min(len(t), 11) - 1
                         datapoints.append((t.root.value, float(t_size)))
-#                         if len(datapoints) % 999 == 0:
-#                             print(len(datapoints))
+
     return datapoints
 
