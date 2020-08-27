@@ -12,3 +12,4 @@ saveddata
 saveddataElevenClasses
 test_new_feature_size
 test_new_feature_size_1output
+*.pth
