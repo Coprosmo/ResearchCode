@@ -141,7 +141,7 @@ def get_theorems(proof):
     return theorems, tree
 
 
-def thm_to_tree(theorem):
+def thm_to_tree(theorem, to_merge):
     """Transform theorem from string form to tree form. Return tree and a list of the unique distinct values in tree."""
 
     distinct_features = set(x for x in theorem if x not in '()')
@@ -168,8 +168,12 @@ def thm_to_tree(theorem):
 
     final_tree = tree.subtrees[0]
     final_tree.parents = None
-
-    bfs_visit(final_tree, store_index=False, fix_subtrees=True)
+    
+    if to_merge:
+        bfs_visit(final_tree, store_index=False, fix_subtrees=True)
+    else:
+        bfs_visit(final_tree, store_index=True, fix_subtrees=True)
+        
     return final_tree, distinct_features
 
 
@@ -254,8 +258,8 @@ def graph_to_data(tree, normalized_features=None):
 
 def make_data(binary=False, only_top=True):
     datapoints = []
-    for i in tqdm(range(10)):
-#     for i in tqdm(range(150)):
+#     for i in tqdm(range(2)):
+    for i in tqdm(range(50)):
 #         if i % 15 != 0:
 #             continue
         label = str(i)
@@ -272,7 +276,7 @@ def make_data(binary=False, only_top=True):
                         size = int(len(tree) <= 5)
                     else:
                         size = min(len(tree), 11) - 1
-                    datapoints.append((tree.root.value, size))
+                    datapoints.append((tree.root.value, float(size)))
                     
                 else:
                     stack = [tree]
@@ -283,6 +287,7 @@ def make_data(binary=False, only_top=True):
                         if 'hypo' in t.root.value:
                             print('Hypothesis Error!!!!')
                         for s in t.subtrees:
+                            assert len(t) > len(s)
                             stack.append(s)
                         
                         if binary:
@@ -293,3 +298,47 @@ def make_data(binary=False, only_top=True):
 
     return datapoints
 
+
+def get_data_from_file(i, binary=False, only_top=True):
+    """A modified version of make_data function, which gets all data
+    from a specific file.
+    """
+    
+    datapoints = []
+    
+    label = str(i)
+    if i // 10 == 0:
+        label = '0' + label
+    if i // 100 == 0:
+        label = '0' + label
+        
+    with open(f'../deephol-data/deepmath/deephol/proofs/human/train/prooflogs-00{label}-of-00600.pbtxt', 'r') as f:
+        for line in f:
+            theorems, tree = get_theorems(line)
+
+            if only_top:
+                if binary:
+                    size = int(len(tree) <= 5)
+                else:
+                    size = min(len(tree), 11) - 1
+                datapoints.append((tree.root.value, float(size)))
+
+            else:
+                stack = [tree]
+                while stack:
+                    t = stack.pop()
+                    if t.root.value is None:
+                        continue
+                    if 'hypo' in t.root.value:
+                        print('Hypothesis Error!!!!')
+                    for s in t.subtrees:
+                        assert len(t) > len(s)
+                        stack.append(s)
+
+                    if binary:
+                        t_size = int(len(t) <= 5)
+                    else:
+                        t_size = min(len(t), 11) - 1
+                    datapoints.append((t.root.value, float(t_size)))
+
+    return datapoints
