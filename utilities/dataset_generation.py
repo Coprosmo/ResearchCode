@@ -258,8 +258,8 @@ def graph_to_data(tree, normalized_features=None):
 
 def make_data(binary=False, only_top=True):
     datapoints = []
-#     for i in tqdm(range(2)):
-    for i in tqdm(range(50)):
+    for i in tqdm(range(2)):
+#     for i in tqdm(range(50)):
 #         if i % 15 != 0:
 #             continue
         label = str(i)
