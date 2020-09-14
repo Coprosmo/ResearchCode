@@ -8,6 +8,7 @@ from tqdm import tqdm
 import random
 
 random.seed(42)
+torch.manual_seed(42)
 
 
 def bfs_visit(tree, store_index=False, fix_subtrees=True):
