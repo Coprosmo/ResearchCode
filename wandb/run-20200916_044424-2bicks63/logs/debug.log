@@ -1,0 +1,19 @@
+2020-09-16 04:44:24,483 INFO    MainThread:961 [wandb_init.py:_log_setup():307] Logging user logs to wandb/run-20200916_044424-2bicks63/logs/debug.log
+2020-09-16 04:44:24,483 INFO    MainThread:961 [wandb_init.py:_log_setup():308] Logging internal logs to wandb/run-20200916_044424-2bicks63/logs/debug-internal.log
+2020-09-16 04:44:24,483 INFO    MainThread:961 [wandb_setup.py:_flush():68] setting env: {}
+2020-09-16 04:44:24,484 INFO    MainThread:961 [wandb_setup.py:_flush():68] multiprocessing start_methods=fork,spawn,forkserver
+2020-09-16 04:44:24,484 WARNING MainThread:961 [wandb_setup.py:_flush():68] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-09-16 04:44:24,484 INFO    MainThread:961 [wandb_setup.py:_flush():68] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fa1c8a9f710>
+2020-09-16 04:44:24,563 WARNING MainThread:961 [wandb_setup.py:__init__():214] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-09-16 04:44:59,223 ERROR   MainThread:961 [wandb_init.py:init():502] error
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/henry/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 479, in init
+    run = wi.init()
+  File "/opt/anaconda3/envs/henry/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 388, in init
+    ret = backend.interface.communicate_run(run, timeout=30)
+  File "/opt/anaconda3/envs/henry/lib/python3.7/site-packages/wandb/interface/interface.py", line 527, in communicate_run
+    return self._communicate_run(run, timeout=timeout)
+  File "/opt/anaconda3/envs/henry/lib/python3.7/site-packages/wandb/interface/interface.py", line 520, in _communicate_run
+    "Couldn't communicate with backend after %s seconds" % timeout
+wandb.errors.error.Error: Couldn't communicate with backend after 30 seconds
+2020-09-16 04:46:57,711 INFO    MainThread:961 [internal.py:handle_exit():137] Internal process exited

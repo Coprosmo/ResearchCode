@@ -1,0 +1,97 @@
+2020-09-16 04:51:25,592 INFO    MainThread:2900 [wandb_init.py:_log_setup():307] Logging user logs to wandb/run-20200916_045125-12s3bufe/logs/debug.log
+2020-09-16 04:51:25,593 INFO    MainThread:2900 [wandb_init.py:_log_setup():308] Logging internal logs to wandb/run-20200916_045125-12s3bufe/logs/debug-internal.log
+2020-09-16 04:51:25,593 INFO    MainThread:2900 [wandb_setup.py:_flush():68] setting env: {}
+2020-09-16 04:51:25,593 INFO    MainThread:2900 [wandb_setup.py:_flush():68] multiprocessing start_methods=fork,spawn,forkserver
+2020-09-16 04:51:25,593 WARNING MainThread:2900 [wandb_setup.py:_flush():68] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-09-16 04:51:25,593 INFO    MainThread:2900 [wandb_setup.py:_flush():68] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fa01da8b610>
+2020-09-16 04:51:25,593 INFO    MainThread:2900 [wandb_run.py:finish():864] finishing run testing/8xlc1rz7
+2020-09-16 04:51:25,593 INFO    MainThread:2900 [wandb_init.py:_jupyter_teardown():239] cleaning up jupyter logic
+2020-09-16 04:51:25,594 INFO    MainThread:2900 [jupyter.py:save_history():200] not saving jupyter history
+2020-09-16 04:51:25,594 INFO    MainThread:2900 [wandb_run.py:_atexit_cleanup():1081] got exitcode: 0
+2020-09-16 04:51:25,595 INFO    MainThread:2900 [wandb_run.py:_restore():1053] restore
+2020-09-16 04:51:26,300 INFO    MainThread:2900 [wandb_run.py:_wait_for_finish():1185] got exit ret: uuid: "229585031712439584bcb7ec46ead4e0"
+response {
+  poll_exit_response {
+    file_counts {
+      wandb_count: 1
+      media_count: 4
+      other_count: 1
+    }
+    pusher_stats {
+      uploaded_bytes: 4114
+      total_bytes: 7287078
+    }
+  }
+}
+
+2020-09-16 04:51:28,358 INFO    MainThread:2900 [wandb_run.py:_wait_for_finish():1185] got exit ret: uuid: "61d19c2425a64dc1a79a00541561dd7c"
+response {
+  poll_exit_response {
+    file_counts {
+      wandb_count: 5
+      media_count: 6
+      other_count: 1
+    }
+    pusher_stats {
+      uploaded_bytes: 7287078
+      total_bytes: 7386427
+    }
+  }
+}
+
+2020-09-16 04:51:30,366 INFO    MainThread:2900 [wandb_run.py:_wait_for_finish():1185] got exit ret: uuid: "617049d8fb5d43329bac0e071a804c70"
+response {
+  poll_exit_response {
+    done: true
+    exit_result {
+    }
+    file_counts {
+      wandb_count: 5
+      media_count: 6
+      other_count: 1
+    }
+    pusher_stats {
+      uploaded_bytes: 7386427
+      total_bytes: 7386427
+    }
+  }
+}
+
+2020-09-16 04:51:31,857 INFO    MainThread:2900 [wandb_run.py:_show_summary():1292] rendering summary
+2020-09-16 04:51:31,870 INFO    MainThread:2900 [wandb_run.py:_show_history():1316] rendering history
+2020-09-16 04:51:31,893 INFO    MainThread:2900 [wandb_run.py:_show_files():1332] logging synced files
+2020-09-16 04:51:32,161 WARNING MainThread:2900 [wandb_setup.py:__init__():214] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-09-16 04:51:37,381 INFO    MainThread:2900 [wandb_run.py:_console_start():1103] atexit reg
+2020-09-16 04:51:37,382 INFO    MainThread:2900 [wandb_run.py:_redirect():978] redirect: SettingsConsole.WRAP
+2020-09-16 04:51:37,382 INFO    MainThread:2900 [wandb_run.py:_redirect():1009] Wrapping output streams.
+2020-09-16 04:51:37,382 INFO    MainThread:2900 [wandb_run.py:_redirect():1025] Redirects installed.
+2020-09-16 04:51:39,245 INFO    MainThread:2900 [wandb_config.py:__setitem__():58] config set batch_size = 16 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7fa01ac1cb90>>
+2020-09-16 04:51:39,245 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb batch_size 16 {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch'}, 'batch_size': 16}
+2020-09-16 04:51:39,245 INFO    MainThread:2900 [wandb_config.py:__setitem__():58] config set test_batch_size = 16 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7fa01ac1cb90>>
+2020-09-16 04:51:39,246 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb test_batch_size 16 {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch'}, 'batch_size': 16, 'test_batch_size': 16}
+2020-09-16 04:51:39,246 INFO    MainThread:2900 [wandb_config.py:__setitem__():58] config set epochs = 20 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7fa01ac1cb90>>
+2020-09-16 04:51:39,246 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb epochs 20 {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch'}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20}
+2020-09-16 04:51:39,247 INFO    MainThread:2900 [wandb_config.py:__setitem__():58] config set lr = 0.005 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7fa01ac1cb90>>
+2020-09-16 04:51:39,247 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb lr 0.005 {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch'}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005}
+2020-09-16 04:51:39,247 INFO    MainThread:2900 [wandb_config.py:__setitem__():58] config set momentum = 0.8 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7fa01ac1cb90>>
+2020-09-16 04:51:39,247 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb momentum 0.8 {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch'}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005, 'momentum': 0.8}
+2020-09-16 04:51:39,248 INFO    MainThread:2900 [wandb_config.py:__setitem__():58] config set no_cuda = False - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7fa01ac1cb90>>
+2020-09-16 04:51:39,248 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb no_cuda False {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch'}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005, 'momentum': 0.8, 'no_cuda': False}
+2020-09-16 04:51:39,248 INFO    MainThread:2900 [wandb_config.py:__setitem__():58] config set seed = 42 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7fa01ac1cb90>>
+2020-09-16 04:51:39,248 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb seed 42 {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch'}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005, 'momentum': 0.8, 'no_cuda': False, 'seed': 42}
+2020-09-16 04:51:39,248 INFO    MainThread:2900 [wandb_config.py:__setitem__():58] config set log_interval = 0 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7fa01ac1cb90>>
+2020-09-16 04:51:39,249 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb log_interval 0 {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch'}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005, 'momentum': 0.8, 'no_cuda': False, 'seed': 42, 'log_interval': 0}
+2020-09-16 04:51:39,255 INFO    MainThread:2900 [wandb_watch.py:watch():32] Watching
+2020-09-16 04:51:43,844 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb None None {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch', 'viz': {'confusion_matrix': {'id': 'wandb/confusion_matrix/v1', 'historyFieldSettings': {'key': 'confusion_matrix', 'x-axis': '_step'}}}}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005, 'momentum': 0.8, 'no_cuda': False, 'seed': 42, 'log_interval': 0}
+2020-09-16 04:52:38,728 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb None None {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch', 'viz': {'confusion_matrix': {'id': 'wandb/confusion_matrix/v1', 'historyFieldSettings': {'key': 'confusion_matrix', 'x-axis': '_step'}}}}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005, 'momentum': 0.8, 'no_cuda': False, 'seed': 42, 'log_interval': 0}
+2020-09-16 04:53:35,010 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb None None {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch', 'viz': {'confusion_matrix': {'id': 'wandb/confusion_matrix/v1', 'historyFieldSettings': {'key': 'confusion_matrix', 'x-axis': '_step'}}}}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005, 'momentum': 0.8, 'no_cuda': False, 'seed': 42, 'log_interval': 0}
+2020-09-16 04:54:34,161 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb None None {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch', 'viz': {'confusion_matrix': {'id': 'wandb/confusion_matrix/v1', 'historyFieldSettings': {'key': 'confusion_matrix', 'x-axis': '_step'}}}}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005, 'momentum': 0.8, 'no_cuda': False, 'seed': 42, 'log_interval': 0}
+2020-09-16 04:55:32,846 INFO    MainThread:2900 [wandb_run.py:_config_callback():506] config_cb None None {'_wandb': {'cli_version': '0.10.0', 'python_version': '3.7.7', 'is_jupyter_run': True, 'is_kaggle_kernel': False, 'framework': 'torch', 'viz': {'confusion_matrix': {'id': 'wandb/confusion_matrix/v1', 'historyFieldSettings': {'key': 'confusion_matrix', 'x-axis': '_step'}}}}, 'batch_size': 16, 'test_batch_size': 16, 'epochs': 20, 'lr': 0.005, 'momentum': 0.8, 'no_cuda': False, 'seed': 42, 'log_interval': 0}
+2020-09-16 10:06:11,091 INFO    MainThread:2900 [wandb_init.py:_jupyter_setup():260] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fa00d46d110>
+2020-09-16 10:06:11,103 INFO    MainThread:2900 [wandb_init.py:_log_setup():307] Logging user logs to wandb/run-20200916_100611-22a3xcu0/logs/debug.log
+2020-09-16 10:06:11,103 INFO    MainThread:2900 [wandb_init.py:_log_setup():308] Logging internal logs to wandb/run-20200916_100611-22a3xcu0/logs/debug-internal.log
+2020-09-16 10:06:11,103 INFO    MainThread:2900 [wandb_setup.py:_flush():68] setting env: {}
+2020-09-16 10:06:11,104 INFO    MainThread:2900 [wandb_setup.py:_flush():68] multiprocessing start_methods=fork,spawn,forkserver
+2020-09-16 10:06:11,105 WARNING MainThread:2900 [wandb_setup.py:_flush():68] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-09-16 10:06:11,105 INFO    MainThread:2900 [wandb_setup.py:_flush():68] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fa01da8b610>
+2020-09-16 10:06:11,106 INFO    MainThread:2900 [wandb_run.py:finish():864] finishing run testing/12s3bufe

@@ -1,0 +1,104 @@
+Training Data: 2000, Validation Data: 1000
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:10<03:27, 10.90s/it] 10%|█         | 2/20 [00:20<03:11, 10.62s/it] 15%|█▌        | 3/20 [00:30<02:55, 10.35s/it] 20%|██        | 4/20 [00:42<02:50, 10.67s/it] 25%|██▌       | 5/20 [00:54<02:50, 11.36s/it] 30%|███       | 6/20 [01:06<02:39, 11.37s/it] 35%|███▌      | 7/20 [01:16<02:23, 11.06s/it] 40%|████      | 8/20 [01:27<02:12, 11.00s/it] 45%|████▌     | 9/20 [01:37<01:56, 10.61s/it] 50%|█████     | 10/20 [01:51<01:56, 11.60s/it] 55%|█████▌    | 11/20 [02:02<01:42, 11.43s/it] 60%|██████    | 12/20 [02:12<01:28, 11.02s/it] 65%|██████▌   | 13/20 [02:23<01:17, 11.08s/it] 70%|███████   | 14/20 [02:34<01:05, 10.94s/it] 75%|███████▌  | 15/20 [02:50<01:02, 12.49s/it] 80%|████████  | 16/20 [03:01<00:48, 12.13s/it] 85%|████████▌ | 17/20 [03:12<00:35, 11.73s/it] 90%|█████████ | 18/20 [03:22<00:22, 11.29s/it] 95%|█████████▌| 19/20 [03:33<00:11, 11.04s/it]100%|██████████| 20/20 [03:48<00:00, 12.50s/it]100%|██████████| 20/20 [03:48<00:00, 11.45s/it]
+Data(edge_attr=[400, 1], edge_index=[2, 400], x=[201, 1], y=[1])
+Data(edge_attr=[100, 1], edge_index=[2, 100], x=[51, 1], y=[1])
+Data(edge_attr=[172, 1], edge_index=[2, 172], x=[87, 1], y=[1])
+Data(edge_attr=[904, 1], edge_index=[2, 904], x=[453, 1], y=[1])
+Data(edge_attr=[76, 1], edge_index=[2, 76], x=[39, 1], y=[1])
+Data(edge_attr=[372, 1], edge_index=[2, 372], x=[187, 1], y=[1])
+Data(edge_attr=[100, 1], edge_index=[2, 100], x=[51, 1], y=[1])
+Data(edge_attr=[76, 1], edge_index=[2, 76], x=[39, 1], y=[1])
+Data(edge_attr=[112, 1], edge_index=[2, 112], x=[57, 1], y=[1])
+Data(edge_attr=[252, 1], edge_index=[2, 252], x=[127, 1], y=[1])
+Data(edge_attr=[488, 1], edge_index=[2, 488], x=[245, 1], y=[1])
+Data(edge_attr=[564, 1], edge_index=[2, 564], x=[283, 1], y=[1])
+Data(edge_attr=[248, 1], edge_index=[2, 248], x=[125, 1], y=[1])
+Data(edge_attr=[140, 1], edge_index=[2, 140], x=[71, 1], y=[1])
+Data(edge_attr=[784, 1], edge_index=[2, 784], x=[393, 1], y=[1])
+Data(edge_attr=[396, 1], edge_index=[2, 396], x=[199, 1], y=[1])
+Data(edge_attr=[216, 1], edge_index=[2, 216], x=[109, 1], y=[1])
+Data(edge_attr=[612, 1], edge_index=[2, 612], x=[307, 1], y=[1])
+Data(edge_attr=[252, 1], edge_index=[2, 252], x=[127, 1], y=[1])
+Data(edge_attr=[552, 1], edge_index=[2, 552], x=[277, 1], y=[1])
+Data(edge_attr=[120, 1], edge_index=[2, 120], x=[61, 1], y=[1])
+Data(edge_attr=[172, 1], edge_index=[2, 172], x=[87, 1], y=[1])
+Data(edge_attr=[504, 1], edge_index=[2, 504], x=[253, 1], y=[1])
+Data(edge_attr=[124, 1], edge_index=[2, 124], x=[63, 1], y=[1])
+Data(edge_attr=[1236, 1], edge_index=[2, 1236], x=[619, 1], y=[1])
+Data(edge_attr=[932, 1], edge_index=[2, 932], x=[467, 1], y=[1])
+Data(edge_attr=[124, 1], edge_index=[2, 124], x=[63, 1], y=[1])
+Data(edge_attr=[504, 1], edge_index=[2, 504], x=[253, 1], y=[1])
+Data(edge_attr=[716, 1], edge_index=[2, 716], x=[359, 1], y=[1])
+Data(edge_attr=[1016, 1], edge_index=[2, 1016], x=[509, 1], y=[1])
+Data(edge_attr=[288, 1], edge_index=[2, 288], x=[145, 1], y=[1])
+Data(edge_attr=[296, 1], edge_index=[2, 296], x=[149, 1], y=[1])
+Data(edge_attr=[160, 1], edge_index=[2, 160], x=[81, 1], y=[1])
+Data(edge_attr=[460, 1], edge_index=[2, 460], x=[231, 1], y=[1])
+Data(edge_attr=[564, 1], edge_index=[2, 564], x=[283, 1], y=[1])
+Data(edge_attr=[332, 1], edge_index=[2, 332], x=[167, 1], y=[1])
+Data(edge_attr=[124, 1], edge_index=[2, 124], x=[63, 1], y=[1])
+Data(edge_attr=[220, 1], edge_index=[2, 220], x=[111, 1], y=[1])
+Data(edge_attr=[340, 1], edge_index=[2, 340], x=[171, 1], y=[1])
+Data(edge_attr=[376, 1], edge_index=[2, 376], x=[189, 1], y=[1])
+Data(edge_attr=[100, 1], edge_index=[2, 100], x=[51, 1], y=[1])
+Data(edge_attr=[524, 1], edge_index=[2, 524], x=[263, 1], y=[1])
+Data(edge_attr=[308, 1], edge_index=[2, 308], x=[155, 1], y=[1])
+Data(edge_attr=[240, 1], edge_index=[2, 240], x=[121, 1], y=[1])
+Data(edge_attr=[444, 1], edge_index=[2, 444], x=[223, 1], y=[1])
+Data(edge_attr=[348, 1], edge_index=[2, 348], x=[175, 1], y=[1])
+Data(edge_attr=[272, 1], edge_index=[2, 272], x=[137, 1], y=[1])
+Data(edge_attr=[308, 1], edge_index=[2, 308], x=[155, 1], y=[1])
+Data(edge_attr=[548, 1], edge_index=[2, 548], x=[275, 1], y=[1])
+Data(edge_attr=[408, 1], edge_index=[2, 408], x=[205, 1], y=[1])
+Data(edge_attr=[1004, 1], edge_index=[2, 1004], x=[503, 1], y=[1])
+Data(edge_attr=[832, 1], edge_index=[2, 832], x=[417, 1], y=[1])
+Data(edge_attr=[996, 1], edge_index=[2, 996], x=[499, 1], y=[1])
+Data(edge_attr=[308, 1], edge_index=[2, 308], x=[155, 1], y=[1])
+Data(edge_attr=[612, 1], edge_index=[2, 612], x=[307, 1], y=[1])
+Data(edge_attr=[748, 1], edge_index=[2, 748], x=[375, 1], y=[1])
+Data(edge_attr=[388, 1], edge_index=[2, 388], x=[195, 1], y=[1])
+Data(edge_attr=[280, 1], edge_index=[2, 280], x=[141, 1], y=[1])
+Data(edge_attr=[248, 1], edge_index=[2, 248], x=[125, 1], y=[1])
+Data(edge_attr=[424, 1], edge_index=[2, 424], x=[213, 1], y=[1])
+Data(edge_attr=[1104, 1], edge_index=[2, 1104], x=[553, 1], y=[1])
+Data(edge_attr=[1076, 1], edge_index=[2, 1076], x=[539, 1], y=[1])
+Data(edge_attr=[264, 1], edge_index=[2, 264], x=[133, 1], y=[1])
+Data(edge_attr=[208, 1], edge_index=[2, 208], x=[105, 1], y=[1])
+Data(edge_attr=[420, 1], edge_index=[2, 420], x=[211, 1], y=[1])
+Data(edge_attr=[404, 1], edge_index=[2, 404], x=[203, 1], y=[1])
+Data(edge_attr=[332, 1], edge_index=[2, 332], x=[167, 1], y=[1])
+Data(edge_attr=[716, 1], edge_index=[2, 716], x=[359, 1], y=[1])
+Data(edge_attr=[472, 1], edge_index=[2, 472], x=[237, 1], y=[1])
+Data(edge_attr=[356, 1], edge_index=[2, 356], x=[179, 1], y=[1])
+Data(edge_attr=[504, 1], edge_index=[2, 504], x=[253, 1], y=[1])
+Data(edge_attr=[272, 1], edge_index=[2, 272], x=[137, 1], y=[1])
+Data(edge_attr=[360, 1], edge_index=[2, 360], x=[181, 1], y=[1])
+Data(edge_attr=[124, 1], edge_index=[2, 124], x=[63, 1], y=[1])
+Data(edge_attr=[860, 1], edge_index=[2, 860], x=[431, 1], y=[1])
+Data(edge_attr=[152, 1], edge_index=[2, 152], x=[77, 1], y=[1])
+Data(edge_attr=[732, 1], edge_index=[2, 732], x=[367, 1], y=[1])
+Data(edge_attr=[208, 1], edge_index=[2, 208], x=[105, 1], y=[1])
+Data(edge_attr=[772, 1], edge_index=[2, 772], x=[387, 1], y=[1])
+Data(edge_attr=[260, 1], edge_index=[2, 260], x=[131, 1], y=[1])
+Data(edge_attr=[528, 1], edge_index=[2, 528], x=[265, 1], y=[1])
+Data(edge_attr=[1100, 1], edge_index=[2, 1100], x=[551, 1], y=[1])
+Data(edge_attr=[124, 1], edge_index=[2, 124], x=[63, 1], y=[1])
+Data(edge_attr=[220, 1], edge_index=[2, 220], x=[111, 1], y=[1])
+Data(edge_attr=[268, 1], edge_index=[2, 268], x=[135, 1], y=[1])
+Data(edge_attr=[88, 1], edge_index=[2, 88], x=[45, 1], y=[1])
+Data(edge_attr=[632, 1], edge_index=[2, 632], x=[317, 1], y=[1])
+Data(edge_attr=[748, 1], edge_index=[2, 748], x=[375, 1], y=[1])
+Data(edge_attr=[124, 1], edge_index=[2, 124], x=[63, 1], y=[1])
+Data(edge_attr=[356, 1], edge_index=[2, 356], x=[179, 1], y=[1])
+Data(edge_attr=[232, 1], edge_index=[2, 232], x=[117, 1], y=[1])
+Data(edge_attr=[372, 1], edge_index=[2, 372], x=[187, 1], y=[1])
+Data(edge_attr=[76, 1], edge_index=[2, 76], x=[39, 1], y=[1])
+Data(edge_attr=[392, 1], edge_index=[2, 392], x=[197, 1], y=[1])
+Data(edge_attr=[668, 1], edge_index=[2, 668], x=[335, 1], y=[1])
+Data(edge_attr=[192, 1], edge_index=[2, 192], x=[97, 1], y=[1])
+Data(edge_attr=[160, 1], edge_index=[2, 160], x=[81, 1], y=[1])
+Data(edge_attr=[300, 1], edge_index=[2, 300], x=[151, 1], y=[1])
+Data(edge_attr=[172, 1], edge_index=[2, 172], x=[87, 1], y=[1])
+2608 5184
+2608 5184
+2608 5184

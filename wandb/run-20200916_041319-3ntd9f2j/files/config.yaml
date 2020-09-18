@@ -1,0 +1,37 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.10.0
+    framework: torch
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    python_version: 3.7.7
+    viz:
+      confusion_matrix:
+        historyFieldSettings:
+          key: confusion_matrix
+          x-axis: _step
+        id: wandb/confusion_matrix/v1
+batch_size:
+  desc: null
+  value: 16
+epochs:
+  desc: null
+  value: 5
+lr:
+  desc: null
+  value: 0.005
+momentum:
+  desc: null
+  value: 0.8
+no_cuda:
+  desc: null
+  value: false
+seed:
+  desc: null
+  value: 42
+test_batch_size:
+  desc: null
+  value: 16

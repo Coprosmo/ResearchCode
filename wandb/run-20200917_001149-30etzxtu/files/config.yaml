@@ -1,0 +1,52 @@
+wandb_version: 1
+
+SWA:
+  desc: null
+  value: false
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.10.0
+    framework: torch
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    python_version: 3.7.7
+batch_size:
+  desc: null
+  value: 16
+dataset:
+  desc: null
+  value: BSu
+epochs:
+  desc: null
+  value: 200
+lr:
+  desc: null
+  value: 0.005
+message_passing_steps:
+  desc: null
+  value: 4
+model:
+  desc: null
+  value: PaliwalNet
+momentum:
+  desc: null
+  value: 0.8
+n_workers:
+  desc: null
+  value: 4
+no_cuda:
+  desc: null
+  value: false
+optimizer:
+  desc: null
+  value: SGD
+seed:
+  desc: null
+  value: 42
+shuffle_data:
+  desc: null
+  value: true
+weight_decay:
+  desc: null
+  value: null
