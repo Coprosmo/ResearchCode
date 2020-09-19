@@ -17,3 +17,4 @@ distinct_features.p
 testing_dataset
 models/*
 old_models/*
+wandb/*
