@@ -1,0 +1,328 @@
+2020-09-16 04:06:26,167 INFO    MainThread:10411 [internal.py:wandb_internal():62] W&B internal server running at pid: 10411
+2020-09-16 04:06:26,230 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:06:26,230 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: login
+2020-09-16 04:06:26,246 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:06:26,291 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:26,650 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:26,652 INFO    SenderThread:10411 [sender.py:send_request_login():135] Login server info: {'cliVersionInfo': {'min_cli_version': '0.8.20', 'max_cli_version': '0.10.0rc8'}}
+2020-09-16 04:06:26,657 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: header
+2020-09-16 04:06:26,657 DEBUG   SenderThread:10411 [sender.py:send():89] send: header
+2020-09-16 04:06:26,657 INFO    WriterThread:10411 [datastore.py:open_for_write():76] open: wandb/run-20200916_040623-3h8x1z1z/run-3h8x1z1z.wandb
+2020-09-16 04:06:26,668 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:06:26,668 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: check_version
+2020-09-16 04:06:26,670 DEBUG   HandlerThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): pypi.org:443
+2020-09-16 04:06:26,693 DEBUG   HandlerThread:10411 [connectionpool.py:_make_request():437] https://pypi.org:443 "GET /pypi/wandb/json HTTP/1.1" 200 48774
+2020-09-16 04:06:26,726 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: run
+2020-09-16 04:06:26,727 DEBUG   SenderThread:10411 [sender.py:send():89] send: run
+2020-09-16 04:06:26,730 DEBUG   SenderThread:10411 [cmd.py:execute():719] Popen(['git', 'cat-file', '--batch-check'], cwd=/pvol/hzwa180/data-processing, universal_newlines=False, shell=None, istream=<valid stream>)
+2020-09-16 04:06:26,746 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:27,173 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:27,178 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:06:27,178 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: run_start
+2020-09-16 04:06:27,183 INFO    SenderThread:10411 [dir_watcher.py:__init__():149] watching files in: wandb/run-20200916_040623-3h8x1z1z/files
+2020-09-16 04:06:27,183 INFO    SenderThread:10411 [sender.py:send_run():415] run started: 3h8x1z1z with start time 1600229186
+2020-09-16 04:06:27,205 DEBUG   HandlerThread:10411 [cmd.py:execute():719] Popen(['git', 'cat-file', '--batch-check'], cwd=/pvol/hzwa180/data-processing, universal_newlines=False, shell=None, istream=<valid stream>)
+2020-09-16 04:06:27,257 DEBUG   HandlerThread:10411 [cmd.py:execute():719] Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/pvol/hzwa180/data-processing, universal_newlines=False, shell=None, istream=None)
+2020-09-16 04:06:27,589 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: files
+2020-09-16 04:06:27,590 DEBUG   SenderThread:10411 [sender.py:send():89] send: files
+2020-09-16 04:06:27,590 INFO    SenderThread:10411 [sender.py:_save_file():495] saving file wandb-metadata.json with policy now
+2020-09-16 04:06:27,602 DEBUG   Thread-10 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:27,603 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:06:27,603 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:06:27,607 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:06:27,609 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:27,898 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:27,930 DEBUG   Thread-10 :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:27,934 DEBUG   Thread-10 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): storage.googleapis.com:443
+2020-09-16 04:06:28,183 INFO    Thread-7  :10411 [dir_watcher.py:_on_file_created():188] file/dir created: wandb/run-20200916_040623-3h8x1z1z/files/wandb-metadata.json
+2020-09-16 04:06:28,184 INFO    Thread-7  :10411 [dir_watcher.py:_on_file_created():188] file/dir created: wandb/run-20200916_040623-3h8x1z1z/files/output.log
+2020-09-16 04:06:28,184 INFO    Thread-7  :10411 [dir_watcher.py:_on_file_created():188] file/dir created: wandb/run-20200916_040623-3h8x1z1z/files/requirements.txt
+2020-09-16 04:06:28,544 DEBUG   Thread-10 :10411 [connectionpool.py:_make_request():437] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/coprosmo/complexity-prediction/3h8x1z1z/wandb-metadata.json?Expires=1600315587&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=NIItfwJNNk5nCMvp56xlbJNxZz168fN3yzu%2Fp0RvndSYrm%2FBQyRLazIjs%2F8L1LC3cZyMPnksi5tUnv9ucXuWL2b7xbrg6eRv7DXdpiXMSmJfgM4fkx9I25fFF%2BoocpFtIBWJoc5995yc%2B25NWEMV6RfulQPXtOhJoszs5Vz4jRbUbibarqAhnosaADQ5MwPBE0uOg48b0cptnAPBpfVi2mZx8gW%2BQrPr9QwN%2BqYMojjWRp25kfd1KiyEU8OmMyAJmH%2FILXyUr1RH6kW3s51sekxfaI1A%2BArNDfPe0rDiNJ1XVe2ZzqqBdoEoKfbpOEMILLGtxtKkOrzbYsnj3Z7ZhA%3D%3D HTTP/1.1" 200 0
+2020-09-16 04:06:28,546 INFO    Thread-10 :10411 [upload_job.py:push():112] Uploaded file /tmp/tmpoj8zal68wandb/2nj36jkp-wandb-metadata.json
+2020-09-16 04:06:29,242 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: output
+2020-09-16 04:06:29,243 DEBUG   SenderThread:10411 [sender.py:send():89] send: output
+2020-09-16 04:06:29,246 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: output
+2020-09-16 04:06:29,246 DEBUG   SenderThread:10411 [sender.py:send():89] send: output
+2020-09-16 04:06:29,248 DEBUG   Thread-4  :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:29,305 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: config
+2020-09-16 04:06:29,305 DEBUG   SenderThread:10411 [sender.py:send():89] send: config
+2020-09-16 04:06:29,308 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: config
+2020-09-16 04:06:29,311 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:29,314 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: config
+2020-09-16 04:06:29,315 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: config
+2020-09-16 04:06:29,316 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: config
+2020-09-16 04:06:29,317 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: config
+2020-09-16 04:06:29,318 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: config
+2020-09-16 04:06:29,574 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:06:29,628 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:29,636 DEBUG   SenderThread:10411 [sender.py:send():89] send: config
+2020-09-16 04:06:29,649 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:29,973 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:29,976 DEBUG   SenderThread:10411 [sender.py:send():89] send: config
+2020-09-16 04:06:29,981 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:30,183 INFO    Thread-7  :10411 [dir_watcher.py:_on_file_modified():201] file/dir modified: wandb/run-20200916_040623-3h8x1z1z/files/output.log
+2020-09-16 04:06:30,183 INFO    Thread-7  :10411 [dir_watcher.py:_on_file_modified():201] file/dir modified: wandb/run-20200916_040623-3h8x1z1z/files/config.yaml
+2020-09-16 04:06:30,302 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:30,306 DEBUG   SenderThread:10411 [sender.py:send():89] send: config
+2020-09-16 04:06:30,310 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:30,631 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:30,635 DEBUG   SenderThread:10411 [sender.py:send():89] send: config
+2020-09-16 04:06:30,641 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:30,953 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:30,957 DEBUG   SenderThread:10411 [sender.py:send():89] send: config
+2020-09-16 04:06:30,965 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:31,183 INFO    Thread-7  :10411 [dir_watcher.py:_on_file_modified():201] file/dir modified: wandb/run-20200916_040623-3h8x1z1z/files/config.yaml
+2020-09-16 04:06:31,273 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:31,292 DEBUG   SenderThread:10411 [sender.py:send():89] send: config
+2020-09-16 04:06:31,300 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:31,832 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:32,184 INFO    Thread-7  :10411 [dir_watcher.py:_on_file_modified():201] file/dir modified: wandb/run-20200916_040623-3h8x1z1z/files/config.yaml
+2020-09-16 04:06:33,738 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: stats
+2020-09-16 04:06:33,742 DEBUG   SenderThread:10411 [sender.py:send():89] send: stats
+2020-09-16 04:06:34,009 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:06:41,036 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: stats
+2020-09-16 04:06:41,037 DEBUG   SenderThread:10411 [sender.py:send():89] send: stats
+2020-09-16 04:06:41,293 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:06:44,127 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:06:44,127 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:06:44,128 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:06:44,130 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:44,425 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:06:47,654 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: stats
+2020-09-16 04:06:47,655 DEBUG   SenderThread:10411 [sender.py:send():89] send: stats
+2020-09-16 04:06:47,916 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:06:53,789 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: history
+2020-09-16 04:06:53,790 DEBUG   SenderThread:10411 [sender.py:send():89] send: history
+2020-09-16 04:06:53,791 DEBUG   SenderThread:10411 [sender.py:send():89] send: summary
+2020-09-16 04:06:53,793 INFO    SenderThread:10411 [sender.py:_save_file():495] saving file wandb-summary.json with policy end
+2020-09-16 04:06:54,052 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:06:54,202 INFO    Thread-7  :10411 [dir_watcher.py:_on_file_created():188] file/dir created: wandb/run-20200916_040623-3h8x1z1z/files/wandb-summary.json
+2020-09-16 04:06:54,296 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: stats
+2020-09-16 04:06:54,296 DEBUG   SenderThread:10411 [sender.py:send():89] send: stats
+2020-09-16 04:06:55,387 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:06:55,388 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: pause
+2020-09-16 04:06:55,388 INFO    HandlerThread:10411 [handler.py:handle_request_pause():229] stopping system metrics thread
+2020-09-16 04:06:55,716 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: stats
+2020-09-16 04:06:55,717 DEBUG   SenderThread:10411 [sender.py:send():89] send: stats
+2020-09-16 04:06:57,988 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:06:59,429 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:06:59,429 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:06:59,433 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:06:59,435 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:06:59,723 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:07:14,727 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:07:14,727 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:07:14,728 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:07:14,730 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:07:15,015 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:07:28,222 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:07:30,019 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:07:30,019 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:07:30,019 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:07:30,022 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:07:30,309 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:07:45,312 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:07:45,313 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:07:45,313 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:07:45,315 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:07:45,602 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:07:58,515 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:08:00,606 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:08:00,606 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:08:00,606 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:08:00,609 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:08:00,898 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:08:15,902 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:08:15,902 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:08:15,902 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:08:15,905 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:08:16,190 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:08:28,750 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:08:31,193 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:08:31,194 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:08:31,194 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:08:31,196 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:08:31,487 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:08:46,490 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:08:46,491 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:08:46,491 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:08:46,493 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:08:46,785 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:08:58,978 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:09:01,789 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:09:01,789 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:09:01,789 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:09:01,791 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:09:02,085 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:09:17,088 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:09:17,088 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:09:17,089 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:09:17,091 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:09:17,383 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:09:29,210 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:09:32,387 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:09:32,387 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:09:32,387 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:09:32,389 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:09:32,682 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:09:47,686 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:09:47,686 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:09:47,686 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:09:47,689 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:09:47,978 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:09:59,451 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:10:02,982 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:10:02,982 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:10:02,982 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:10:02,984 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:10:03,271 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:10:18,275 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:10:18,275 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:10:18,275 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:10:18,277 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:10:18,562 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:10:29,686 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:10:33,566 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:10:33,566 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:10:33,566 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:10:33,569 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:10:33,867 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:10:48,871 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:10:48,872 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:10:48,872 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:10:48,875 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:10:49,172 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:10:59,920 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:11:04,176 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:04,176 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:11:04,177 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:04,179 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:11:04,469 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:11:19,472 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:19,473 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:11:19,473 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:19,475 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:11:19,763 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:11:30,168 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:11:34,767 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:34,767 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:11:34,767 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:34,770 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:11:35,178 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:11:50,183 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:50,183 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: status
+2020-09-16 04:11:50,183 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:50,186 DEBUG   SenderThread:10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:11:50,476 DEBUG   SenderThread:10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:11:55,411 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: exit
+2020-09-16 04:11:55,411 DEBUG   SenderThread:10411 [sender.py:send():89] send: exit
+2020-09-16 04:11:55,412 INFO    SenderThread:10411 [sender.py:send_exit():147] handling exit code: 0
+2020-09-16 04:11:55,412 INFO    SenderThread:10411 [sender.py:send_exit():155] send defer
+2020-09-16 04:11:55,412 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:55,412 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: poll_exit
+2020-09-16 04:11:55,412 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:55,413 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:55,413 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: defer
+2020-09-16 04:11:55,413 INFO    HandlerThread:10411 [handler.py:handle_request_defer():70] handle defer: 0
+2020-09-16 04:11:55,413 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:55,414 INFO    SenderThread:10411 [sender.py:send_request_defer():164] handle sender defer: 0
+2020-09-16 04:11:55,414 INFO    SenderThread:10411 [sender.py:send_request_defer():200] send defer: 1
+2020-09-16 04:11:55,414 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:55,414 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: defer
+2020-09-16 04:11:55,414 INFO    HandlerThread:10411 [handler.py:handle_request_defer():70] handle defer: 1
+2020-09-16 04:11:55,416 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:55,416 INFO    SenderThread:10411 [sender.py:send_request_defer():164] handle sender defer: 1
+2020-09-16 04:11:55,416 INFO    SenderThread:10411 [sender.py:send_request_defer():200] send defer: 2
+2020-09-16 04:11:55,416 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:55,416 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: defer
+2020-09-16 04:11:55,416 INFO    HandlerThread:10411 [handler.py:handle_request_defer():70] handle defer: 2
+2020-09-16 04:11:55,417 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:55,417 INFO    SenderThread:10411 [sender.py:send_request_defer():164] handle sender defer: 2
+2020-09-16 04:11:55,417 INFO    SenderThread:10411 [sender.py:send_request_defer():200] send defer: 3
+2020-09-16 04:11:55,417 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:55,417 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: defer
+2020-09-16 04:11:55,417 INFO    HandlerThread:10411 [handler.py:handle_request_defer():70] handle defer: 3
+2020-09-16 04:11:55,418 DEBUG   SenderThread:10411 [sender.py:send():89] send: summary
+2020-09-16 04:11:55,420 INFO    SenderThread:10411 [sender.py:_save_file():495] saving file wandb-summary.json with policy end
+2020-09-16 04:11:55,421 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:55,421 INFO    SenderThread:10411 [sender.py:send_request_defer():164] handle sender defer: 3
+2020-09-16 04:11:55,421 INFO    SenderThread:10411 [sender.py:send_request_defer():200] send defer: 4
+2020-09-16 04:11:55,421 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:55,421 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: defer
+2020-09-16 04:11:55,421 INFO    HandlerThread:10411 [handler.py:handle_request_defer():70] handle defer: 4
+2020-09-16 04:11:55,422 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:55,422 INFO    SenderThread:10411 [sender.py:send_request_defer():164] handle sender defer: 4
+2020-09-16 04:11:55,422 INFO    SenderThread:10411 [dir_watcher.py:finish():253] shutting down directory watcher
+2020-09-16 04:11:55,662 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:11:56,280 INFO    SenderThread:10411 [dir_watcher.py:_on_file_modified():201] file/dir modified: wandb/run-20200916_040623-3h8x1z1z/files/wandb-summary.json
+2020-09-16 04:11:56,280 INFO    SenderThread:10411 [dir_watcher.py:finish():282] scan: wandb/run-20200916_040623-3h8x1z1z/files
+2020-09-16 04:11:56,281 INFO    SenderThread:10411 [dir_watcher.py:finish():288] scan save: wandb/run-20200916_040623-3h8x1z1z/files/wandb-metadata.json wandb-metadata.json
+2020-09-16 04:11:56,281 INFO    SenderThread:10411 [dir_watcher.py:finish():288] scan save: wandb/run-20200916_040623-3h8x1z1z/files/config.yaml config.yaml
+2020-09-16 04:11:56,281 INFO    SenderThread:10411 [dir_watcher.py:finish():288] scan save: wandb/run-20200916_040623-3h8x1z1z/files/requirements.txt requirements.txt
+2020-09-16 04:11:56,281 INFO    SenderThread:10411 [dir_watcher.py:finish():288] scan save: wandb/run-20200916_040623-3h8x1z1z/files/output.log output.log
+2020-09-16 04:11:56,281 INFO    SenderThread:10411 [dir_watcher.py:finish():288] scan save: wandb/run-20200916_040623-3h8x1z1z/files/wandb-summary.json wandb-summary.json
+2020-09-16 04:11:56,282 INFO    SenderThread:10411 [sender.py:send_request_defer():200] send defer: 5
+2020-09-16 04:11:56,282 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:56,283 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: defer
+2020-09-16 04:11:56,283 INFO    HandlerThread:10411 [handler.py:handle_request_defer():70] handle defer: 5
+2020-09-16 04:11:56,293 DEBUG   Thread-11 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:11:56,293 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:56,294 INFO    SenderThread:10411 [sender.py:send_request_defer():164] handle sender defer: 5
+2020-09-16 04:11:56,294 INFO    SenderThread:10411 [file_pusher.py:finish():139] shutting down file pusher
+2020-09-16 04:11:56,294 INFO    SenderThread:10411 [sender.py:send_request_defer():200] send defer: 6
+2020-09-16 04:11:56,312 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:56,312 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: defer
+2020-09-16 04:11:56,312 INFO    HandlerThread:10411 [handler.py:handle_request_defer():70] handle defer: 6
+2020-09-16 04:11:56,323 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:56,323 INFO    SenderThread:10411 [sender.py:send_request_defer():164] handle sender defer: 6
+2020-09-16 04:11:56,367 DEBUG   Thread-14 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:11:56,385 DEBUG   Thread-13 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:11:56,389 DEBUG   Thread-12 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-16 04:11:56,585 DEBUG   Thread-4  :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /files/coprosmo/complexity-prediction/3h8x1z1z/file_stream HTTP/1.1" 200 None
+2020-09-16 04:11:56,587 INFO    SenderThread:10411 [sender.py:send_request_defer():200] send defer: 7
+2020-09-16 04:11:56,588 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:56,588 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: defer
+2020-09-16 04:11:56,588 INFO    HandlerThread:10411 [handler.py:handle_request_defer():70] handle defer: 7
+2020-09-16 04:11:56,588 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:56,588 INFO    SenderThread:10411 [sender.py:send_request_defer():164] handle sender defer: 7
+2020-09-16 04:11:56,588 INFO    SenderThread:10411 [sender.py:send_request_defer():200] send defer: 8
+2020-09-16 04:11:56,589 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: final
+2020-09-16 04:11:56,589 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: footer
+2020-09-16 04:11:56,589 DEBUG   SenderThread:10411 [sender.py:send():89] send: final
+2020-09-16 04:11:56,590 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:56,590 DEBUG   SenderThread:10411 [sender.py:send():89] send: footer
+2020-09-16 04:11:56,590 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: defer
+2020-09-16 04:11:56,590 INFO    HandlerThread:10411 [handler.py:handle_request_defer():70] handle defer: 8
+2020-09-16 04:11:56,591 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:56,591 INFO    SenderThread:10411 [sender.py:send_request_defer():164] handle sender defer: 8
+2020-09-16 04:11:56,715 DEBUG   Thread-14 :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:11:56,719 DEBUG   Thread-14 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): storage.googleapis.com:443
+2020-09-16 04:11:56,736 DEBUG   Thread-11 :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:11:56,740 DEBUG   Thread-11 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): storage.googleapis.com:443
+2020-09-16 04:11:56,763 DEBUG   Thread-12 :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:11:56,767 DEBUG   Thread-12 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): storage.googleapis.com:443
+2020-09-16 04:11:56,775 DEBUG   Thread-13 :10411 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-09-16 04:11:56,779 DEBUG   Thread-13 :10411 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): storage.googleapis.com:443
+2020-09-16 04:11:57,419 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:57,420 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: poll_exit
+2020-09-16 04:11:57,420 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:57,451 DEBUG   Thread-13 :10411 [connectionpool.py:_make_request():437] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/coprosmo/complexity-prediction/3h8x1z1z/output.log?Expires=1600315916&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=Lf4h5%2FEhpCN8ETd6KfU74idz19ql946i%2B2MKydHptrOjEKYPp0vpMsmY6YErSVMUj4Gf16NHXwNoYjml3QboqEZJY9XXRuCPAx5GHGschQ85J95HZXHwBhJy3OPmvvgdAk7KTNwgNIM%2FcXoYYLiLPPzRu0A%2Bb3DOLJjvmc7kB%2BBrjRvVRGYAs8ObBiov2%2BZYdcOywiVVtMU6WlSaIKSZE%2F3AV1vkGqapjYoyoll%2BfwPXkqq2ffbPwZIEp4DN0mhBtbWdop3ulV9wkYibfdHdTFjQHb7kcDDcnOQp2DxLyQQRGxkdmGGpgEU0TtTReBQEMGqZ33%2Fij1q5p2yXJxLMwA%3D%3D HTTP/1.1" 200 0
+2020-09-16 04:11:57,452 DEBUG   Thread-12 :10411 [connectionpool.py:_make_request():437] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/coprosmo/complexity-prediction/3h8x1z1z/requirements.txt?Expires=1600315916&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=cRuZi8mQurUbQmjZhwvsy3msVC0Zy3WQoIZ7xZHoJd6U%2Bqr7ACx2sdcpDAfvo4uksqWFjmEAPaxkFkJqhUz8or3hrsXN5k2FAmVytARdW%2BT37PzdZLfSKKJhJ0Wxj4qWumksPupY%2BUF%2BdxKIob7YbrLZGy%2BLZgNIQiECZXbqA6mtv8RPNUHJKvU%2BFRwJpbHF2oDigGQVAUuZewTPr4klQKIvs%2BuP8dtE%2B3dzdLfVv1RBoDE7OjVvmTfd7%2FPkO9FyRqL5rNpZQIYqse13%2BEQSbwW71mdEBVAZQ%2Fxo4ONpvVnvbJkfreJlLYgQCcYtxHDwX8r0MPNCpxCtrHqr6VwKQg%3D%3D HTTP/1.1" 200 0
+2020-09-16 04:11:57,453 INFO    Thread-13 :10411 [upload_job.py:push():112] Uploaded file wandb/run-20200916_040623-3h8x1z1z/files/output.log
+2020-09-16 04:11:57,453 DEBUG   Thread-14 :10411 [connectionpool.py:_make_request():437] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/coprosmo/complexity-prediction/3h8x1z1z/wandb-summary.json?Expires=1600315916&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=TkChL7SMSdEaTBwOxt4N5XuwsZF4K5QALSgbEIyldPAweCT6IovDH2L0Ay6V6WBGm0HqPTwTqwzZqAR08W99J%2FzMJSGGzfq2bZfPRaEcyK1%2B2QKMQ8e0AQdkVIWJbgkchtuSf%2F5kklJqalxYNpl%2FIX3thC71nOH3z8UHMIPhKvLL7kAE3MdGu2Mi3JceCU7SN%2BYTuxzvz7BGlpP5i3xsHGeyPyx9VLyLgSOJCb%2FpfR%2FZHdCUHNpIEAKLIPq8hi6zB0ySOfB2yqJqRNC2glY%2BK4A0bXkHeFzl3LUWHRv3KZgVgH5gYSUft9PYwCbM2fX2voI9v9af3zVsQzf4Fb%2BIig%3D%3D HTTP/1.1" 200 0
+2020-09-16 04:11:57,454 INFO    Thread-12 :10411 [upload_job.py:push():112] Uploaded file wandb/run-20200916_040623-3h8x1z1z/files/requirements.txt
+2020-09-16 04:11:57,455 DEBUG   Thread-11 :10411 [connectionpool.py:_make_request():437] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/coprosmo/complexity-prediction/3h8x1z1z/config.yaml?Expires=1600315916&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=BXdtEOs0fSCGsD1J36RDR1UmY1jJlbYk44IUwm9HSMRkrwN1GByUn4QUqL8yVgugIJ8qrOs7Q8ld62C1psuh1Z5viRUAxjLt6z79zTF7Y0cjf5hHvKxID5HFUs1HElx7C0skK%2FaOfr%2FHsOErL5fuEqxAbPFP0d2e3BVqkUvDMeDK4OLhJoHdk4a4rzt4eGibq0JmnlLAkInZ1I%2BN3uaqd%2FPZUw2Cpu1%2F0lXRIX3oFZcYY4b4A85VLDmQ34txgu6UyUTPjmKbVH%2FDhbQtczX%2BlUcKMzNJQXheh%2Bhx5RwdqWfOh%2B35AfRv5hpwea608U3lIjIPZhwV0hGKrXGLvnC1xQ%3D%3D HTTP/1.1" 200 0
+2020-09-16 04:11:57,456 INFO    Thread-14 :10411 [upload_job.py:push():112] Uploaded file wandb/run-20200916_040623-3h8x1z1z/files/wandb-summary.json
+2020-09-16 04:11:57,459 INFO    Thread-11 :10411 [upload_job.py:push():112] Uploaded file wandb/run-20200916_040623-3h8x1z1z/files/config.yaml
+2020-09-16 04:11:59,425 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:59,425 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: poll_exit
+2020-09-16 04:11:59,425 DEBUG   SenderThread:10411 [sender.py:send():89] send: request
+2020-09-16 04:11:59,425 INFO    SenderThread:10411 [file_pusher.py:join():144] waiting for file pusher
+2020-09-16 04:11:59,429 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:59,429 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: get_summary
+2020-09-16 04:11:59,430 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:59,430 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: sampled_history
+2020-09-16 04:11:59,431 DEBUG   HandlerThread:10411 [handler.py:handle():47] handle: request
+2020-09-16 04:11:59,431 DEBUG   HandlerThread:10411 [handler.py:handle_request():56] handle_request: shutdown
+2020-09-16 04:11:59,431 INFO    HandlerThread:10411 [handler.py:finish():274] shutting down handler
+2020-09-16 04:11:59,590 INFO    WriterThread:10411 [datastore.py:close():257] close: wandb/run-20200916_040623-3h8x1z1z/run-3h8x1z1z.wandb
