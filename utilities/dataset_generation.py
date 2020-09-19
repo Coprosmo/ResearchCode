@@ -40,31 +40,6 @@ def bfs_visit(tree, store_index=False, fix_subtrees=True):
 
     return tuple(visit_order)
 
-#
-# def get_subexpressions(tree, store=False):
-#     index = 0
-#     queue = deque()
-#     visit_order = []
-#     subexpr = []
-#     queue.append(tree)
-#
-#     if store:
-#         tree.root.index = index
-#         index += 1
-#
-#     while queue:
-#         x = queue.popleft()
-#         visit_order.append(x.root)
-#
-#         for subtree in x.subtrees:
-#             queue.append(subtree)
-#
-#             if store_index:
-#                 subtree.root.index = index
-#                 index += 1
-#
-#     return tuple(visit_order)
-
 
 def process_theorem(theorem):
     x = theorem
@@ -227,10 +202,6 @@ def graph_to_data(tree, normalized_features=None):
 
         if x.parents:
             for parent in x.parents:
-#                 for p, c in edges_up:
-#                     if p == parent.root.index and c == x.root.index:
-#                         break
-#                 else:
                 edges_up.append([x.root.index, parent.root.index])
                 edge_features_up.append([child_index])
 
@@ -259,10 +230,7 @@ def graph_to_data(tree, normalized_features=None):
 
 def make_data(binary=False, only_top=True):
     datapoints = []
-    for i in tqdm(range(2)):
-#     for i in tqdm(range(50)):
-#         if i % 15 != 0:
-#             continue
+    for i in tqdm(range(50)):
         label = str(i)
         if i // 10 == 0:
             label = '0' + label
