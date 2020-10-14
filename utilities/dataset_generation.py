@@ -230,7 +230,8 @@ def graph_to_data(tree, normalized_features=None):
 
 def make_data(binary=False, only_top=True):
     datapoints = []
-    for i in tqdm(range(100)):
+    
+    for i in tqdm(range(250)):
         label = str(i)
         if i // 10 == 0:
             label = '0' + label
@@ -244,7 +245,16 @@ def make_data(binary=False, only_top=True):
                     if binary:
                         size = int(len(tree) <= 5)
                     else:
-                        size = min(len(tree), 11) - 1
+                        temp_size = len(tree)
+                        if temp_size <= 5:
+                            size = 0
+                        elif temp_size <= 10:
+                            size = 1
+                        elif temp_size <= 15:
+                            size = 2
+                        else:
+                            size = 3
+#                         size = min(len(tree), 11) - 1
                     datapoints.append((tree.root.value, float(size)))
                     
                 else:
@@ -262,7 +272,17 @@ def make_data(binary=False, only_top=True):
                         if binary:
                             t_size = int(len(t) <= 5)
                         else:
-                            t_size = min(len(t), 11) - 1
+                            temp_size = len(t)
+                            if temp_size <= 5:
+                                t_size = 0
+                            elif temp_size <= 10:
+                                t_size = 1
+                            elif temp_size <= 15:
+                                t_size = 2
+                            else:
+                                t_size = 3
+#                         size = min(len(tree), 11) - 1
+                        
                         datapoints.append((t.root.value, float(t_size)))
 
     return datapoints
