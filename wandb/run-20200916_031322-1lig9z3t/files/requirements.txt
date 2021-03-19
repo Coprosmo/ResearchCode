@@ -63,7 +63,7 @@ parso==0.7.0
 pathtools==0.1.2
 pexpect==4.8.0
 pickleshare==0.7.5
-pillow==7.1.2
+pillow==8.1.1
 pip==20.0.2
 plyfile==0.7.2
 prometheus-client==0.7.1
