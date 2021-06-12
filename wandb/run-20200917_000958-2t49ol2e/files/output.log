@@ -1,2 +1,0 @@
-Training Data: 17662, Validation Data: 8831
-{'model': 'PaliwalNet', 'message_passing_steps': 4, 'batch_size': 16, 'n_workers': 4, 'epochs': 200, 'optimizer': 'SGD', 'lr': 0.005, 'momentum': 0.8, 'weight_decay': None, 'SWA': False, 'no_cuda': False, 'seed': 42, 'dataset': 'BSu', 'shuffle_data': True}
