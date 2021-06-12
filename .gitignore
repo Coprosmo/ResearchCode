@@ -18,4 +18,3 @@ testing_dataset
 models/*
 old_models/*
 wandb/*
-plotting*
